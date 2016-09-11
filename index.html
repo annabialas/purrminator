@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HW 9/12/16 Anna Bialas</title>
+
+<link rel="shortcut icon" type="image/png" href="img/1.png">
+
+<style>
+
+	html { cursor: pointer; }
+
+	#homework { 
+		margin: 80px auto 20px auto; 
+		width: 800px;
+		font-family: 'Helvetica', sans-serif;
+		font-weight: 200;
+		text-align: center;
+	}
+
+	img { width: 100px; height: 100%; margin: 10px;}
+
+</style>
+
+</head>
+<body>
+
+<div id="homework">
+	<h4><em>PURRMINATOR</em></h4>
+	<p>Start clicking (anywhere, I swear!)</p>
+	<p>I like orange cats.</p>
+	<p>by Anna Bialas</p>
+</div>
+
+<script>
+
+	document.querySelector("html").addEventListener("click", addFeline);
+
+	var felineArr = ["img/1.png", "img/2.png", "img/3.png", "img/4.png", "img/5.png", "img/6.png"];
+
+	function addFeline(){
+		var img = document.createElement("img");           
+		img.src = felineArr[Math.floor(Math.random() * felineArr.length)];
+		document.getElementById("homework").appendChild(img);
+	};
+        
+</script>
+
+</body>
+</html>
+
