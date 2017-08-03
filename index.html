@@ -29,6 +29,7 @@
  	<p>Start clicking (anywhere, I swear!)</p>
  	<p>I like orange cats.</p>
  	<p>by Anna Bialas</p>
+ 	<div id="cat"></div>
  	<div id="cats"></div>
  </div>
  
@@ -41,9 +42,18 @@
  	function addFeline(){
  		var img = document.createElement("img");           
  		img.src = felineArr[Math.floor(Math.random() * felineArr.length)];
- 		var section = document.getElementById("cats");
- 		section.insertBefore(img, section.firstChild);
- 		
+ 		var cat = document.getElementById("cat")
+ 		var cats = document.getElementById("cats")
+ 		var first_cat = cat.firstChild
+ 		console.log(first_cat)
+ 		if (first_cat == null) {
+ 			cat.appendChild(img)	
+ 		}
+ 		else {
+ 			cat.removeChild(cat.firstChild)
+ 			cats.insertBefore(first_cat, cats.firstChild);
+ 			cat.appendChild(img)	
+ 		}	
  	};
          
  </script>
